@@ -1,0 +1,46 @@
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+function renderLicenseBadge(license) {
+  //how to return license link, where it returns the actual link of the license
+
+  if (license !== "None") {
+    return `## License 
+    This project is licensed with ${license}. 
+    `;
+  }
+  return "";
+}
+
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  // creating my markdwon with template strings , to force out particular string
+}
+
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {}
+
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+  // how can you call function to actual call template string
+  //generating markodwn, go back to questions array for the name of object
+  return `# ${data.title}
+## Description 
+${data.description}
+
+## Table of Contents
+${data.tableOfContents}
+
+## Tests
+${data.tests}
+
+## Contribution
+${data.contribution}
+
+
+
+`;
+}
+
+module.exports = generateMarkdown;
