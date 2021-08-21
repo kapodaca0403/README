@@ -3,7 +3,7 @@
   
   
   ## Table of Contents:
-  * [License] (#license)
+  * [License](#license)
     
   * [Description](#description)
   * [Installation](#installation)
