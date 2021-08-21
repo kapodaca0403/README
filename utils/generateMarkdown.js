@@ -14,7 +14,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `* [License](#license)
+    return `* License 
     `;
     // creating my markdwon with template strings , to force out particular string
   }
