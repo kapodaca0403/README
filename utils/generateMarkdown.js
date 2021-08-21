@@ -26,7 +26,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== "None") {
     return `## License 
-    This project is licensed under the ${license}license. 
+    This project is licensed under the ${license} license. 
     `;
   }
   return "";
@@ -52,6 +52,7 @@ function generateMarkdown(data) {
 ${renderLicenseSection(data.license)}
   
 ## Description 
+  ![README Demo](assets/demo.gif)
   ${data.description}
 
 ## Tests
