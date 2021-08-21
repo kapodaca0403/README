@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-inquirer.prompt(questions);
+//inquirer.prompt(questions);
 // TODO: Create an array of questions for user input
 const questions = [
   {
@@ -23,34 +23,49 @@ const questions = [
     name: "title",
   },
   {
-    tye: "input",
+    type: "input",
     name: "description",
     message: "Give a brief description of your project?",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "What is this used for?",
   },
   {
     type: "list",
     name: "license",
     message: "What kind of license does your project use?",
-    choices: ["MIT", "BSD", "GPL"], //list name of other licenses]
+    choices: ["None", "MIT", "BSD", "GPL"], //list name of other licenses]
   },
   {
     type: "input",
     name: "installation",
     message: "What commands should be run for deoendencies?",
-    default: "npm i",
+    default: "Npi I",
   },
   {
     type: "input",
-    name: "contributer",
+    name: "contribution",
     message: "How does a user contribute to this project",
+    default:
+      "We believe code is never finished, and welcome your contributions to enhance the application's functionality. Please adhere to the Code of Conduct for the Contributor Covenant, version 2.0, at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "How to run test?",
+    default: "npm run test",
   },
 ];
 // what will inqurier return? a promise object so we use a .then
-inquirer.prompt(questions).then((data) => {});
+//inquirer.prompt(questions).then((data) => {
+
+//});
 
 // TODO: Create a function to write README file
 function writeToFile(readmeFile, data) {
-  fs.writeFile(path.join(process.cwd(), readmeFile), data); // giving file name and what to put in that file
+  return fs.writeFileSync(path.join(process.cwd(), readmeFile), data); // giving file name and what to put in that file
 }
 
 // TODO: Create a function to initialize app
@@ -60,10 +75,10 @@ function writeToFile(readmeFile, data) {
 function init() {
   //presents the user with questions
   inquirer.prompt(questions).then((data) => {
-    writeToFile("README.md", generateMarkdown(data), (err) => {
+    writeToFile("README.md", generateMarkdown(data), (err) =>
       // try with spread operator
-      err ? console.log(err) : console.log("File was written");
-    });
+      err ? console.log(err) : console.log("File was written")
+    );
   });
 }
 

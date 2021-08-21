@@ -5,9 +5,7 @@ function renderLicenseBadge(license) {
   //how to return license link, where it returns the actual link of the license
 
   if (license !== "None") {
-    return `  
-    ![license badge](https://img.shields.io/badge/License-${license}-lightgrey.svg)
-    `;
+    return `![license badge](https://img.shields.io/badge/License-${license}-lightgrey.svg)`;
   }
   return "";
 }
@@ -39,19 +37,41 @@ function generateMarkdown(data) {
   // how can you call function to actual call template string
   //generating markodwn, go back to questions array for the name of object
   return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
+  
+  
+  ## Table of Contents:
+  ${renderLicenseLink(data.license)}
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Test](#test)
+  * [Usage](#usage)
+  * [Contribution](#contribution)
+  * [Questions](#questions)
+  
+${renderLicenseSection(data.license)}
+  
 ## Description 
-${data.description}
-
-## Table of Contents
-${data.tableOfContents}
+  ${data.description}
 
 ## Tests
 ${data.tests}
 
+## Usage 
+${data.usage}
+
 ## Contribution
 ${data.contribution}
 
+## Questions
+If you have any questions please contact me at ${
+    data.email
+  } You can find more of my projects at [${data.github}](https://github.com/${
+    data.github
+  })
 
+## Installation 
+${data.installation}
 
 `;
 }
