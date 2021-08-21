@@ -1,4 +1,4 @@
-# Testing
+# README Generator
   ![license badge](https://img.shields.io/badge/License-MIT-lightgrey.svg)
   
   
@@ -17,13 +17,13 @@
     
   
 ## Description 
-  Tester 
+  This is a README that is automatically generated for whoever would like to use it. Just answer a few questions and you are all set. 
 
 ## Tests
 undefined
 
 ## Usage 
-Testing 
+Creating a README for anyone to use.  
 
 ## Contribution
 We believe code is never finished, and welcome your contributions to enhance the application's functionality. Please adhere to the Code of Conduct for the Contributor Covenant, version 2.0, at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
